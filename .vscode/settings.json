@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:dash_api}/prisma/tickets_armazenados.db",
+            "name": "tickets_armazenados"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
