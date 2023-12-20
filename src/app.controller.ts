@@ -7,9 +7,9 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
 
-  @Get('tickets')
-  tickets(): Observable<any> {
-    return this.appService.tickets();
+  @Get('ticketsResolvidosEFechadosAtuais')
+  ticketsResolvidosEFechadosAtuais(): Observable<any> {
+    return this.appService.ticketsResolvidosEFechadosAtuais();
   }
 
 }

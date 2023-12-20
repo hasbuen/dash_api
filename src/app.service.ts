@@ -7,7 +7,7 @@ export class AppService {
 
   constructor() { }
 
-  tickets(): Observable<any> {
+  ticketsResolvidosEFechadosAtuais(): Observable<any> {
     return from(
       (async () => {
         try {

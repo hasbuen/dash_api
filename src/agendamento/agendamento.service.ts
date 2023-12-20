@@ -23,9 +23,10 @@ export class AgendamentoService implements OnApplicationBootstrap {
       const session = await obter('SessionID');
       let ticketsIDsObtidosEmCache = await obter('TicketIDs');
       const dateFilterParam = dateTimeFormatted();
+      //const dateFilterParam = '2023-09-01 08:00:00'
 
-      const urlParaBuscarIDsDeTickets = `${process.env.API_HOST}/otrs/nph-genericinterface.pl/Webservice/Dashboard/TicketSearch?SessionID=${session}&QueueIDs=6&TicketCreateTimeNewerDate=${dateFilterParam}`;
-
+      const urlParaBuscarIDsDeTickets = `${process.env.API_HOST}/otrs/nph-genericinterface.pl/Webservice/Dashboard/TicketSearch?SessionID=${session}&QueueIDs=${process.env.API_SETOR}&TicketCreateTimeNewerDate=${dateFilterParam}`;
+      //const urlParaBuscarIDsDeTickets = `${process.env.API_HOST}/otrs/nph-genericinterface.pl/Webservice/Dashboard/TicketSearch?SessionID=${session}&TicketCreateTimeNewerDate=${dateFilterParam}`;
       const obtiveIDs = await fetch(urlParaBuscarIDsDeTickets);
 
       if (!obtiveIDs.ok) {

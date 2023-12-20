@@ -26,7 +26,6 @@ export class AppModule implements NestModule {
     consumer.apply(cors({
       origin: '*', 
       methods: 'GET',
-      credentials: true,
     })).forRoutes('*');
   }
 }
